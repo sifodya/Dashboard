@@ -266,10 +266,11 @@ textarea {
   display: grid;
   grid-template-columns: auto;
   background-color: gray;
-  margin: 0px;
+  margin: 10px;
   width: 100%;
   border: 3px solid black;
   row-gap: 10px;
+  padding: 10px;
 }
 
 .News div.Content {
@@ -289,7 +290,7 @@ textarea {
   font-weight: bold;
   background-color: darkgrey;
   text-align: center;
-  width: 50%;
+  width: 70%;
   padding: 10px;
   border-radius: 10px;
   justify-self: center;
@@ -330,4 +331,61 @@ textarea {
 .News a{
   color: black;
   text-decoration: none;
+}
+
+.Audiokinetic
+{
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+}
+
+.Audiokinetic .MainContent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Audiokinetic .Header
+{
+  align-content: center;
+  text-align: center;
+  font : 20px "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  background-color: darkgrey;
+  width: 70%;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.Audiokinetic .MainContent div.SummaryCard{
+  box-shadow: #575b65 1px 1px 1px;
+  width: 33%;
+}
+.Audiokinetic .MainContent a{
+  color: black;
+  text-decoration: none;
+}
+
+.Audiokinetic .MainContent div.ImageContainer img{
+  border-radius: 10px;
+}
+
+.Audiokinetic .MainContent div.croppedAvatar img{
+  border-radius: 100%;
+}
+
+.Audiokinetic .MainContent div.Tags span{
+  color: #575b65;
+  border-color: #e9eaeb;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 5px;
 }
