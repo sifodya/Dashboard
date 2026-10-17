@@ -23,7 +23,7 @@ else:
 utility.localise()
 now = datetime.now()
 sectionOfDay = utility.getSectionDay(now)
-
+"""
 morning = [0, 1, 2, 3, 4, 5, 6, 7, 8, 23]
 afternoon = [9, 10, 11, 12, 13, 14, 15, 16]
 evening = [17, 18, 19, 20, 21, 22]
@@ -41,6 +41,9 @@ with open('srf.xml', 'wb') as f: #except block
 
 tree = ET.parse('srf.xml')
 root = tree.getroot()
+"""
+
+root = news.getNewsRSS('https://www.srf.ch/news/bnf/rss/19032223')
 
 with open('P://Documents//Git Repo//Dashboard//index.html', "r+", encoding='utf_8') as m:
   masterHTML = html.fromstring(m.read())
@@ -52,7 +55,8 @@ with open('P://Documents//Git Repo//Dashboard//index.html', "r+", encoding='utf_
 
   for child in root.iter('item'):
     tx = child[2].text
-    if int(tx[17:19]) in sectionOfDay:
+
+    if int(tx[17:19]) in sectionOfDay and int(tx[5:7]) == int(now.day):
       elem4 = child[4].text
       imgLink = elem4.find('src="')
       imgLinkEnd = elem4.find('webp')
