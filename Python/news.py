@@ -2,18 +2,20 @@ import requests
 from lxml import html
 import xml.etree.ElementTree as ET
 
-def getNewsRSS(u):
+def getNewsRSS(u, file):
   """
 
   :param u: The URL of the news rss feed
+  :param file: The name of the file
   :type u: str
+  :type file: str
   :return: The root of the news rss feed
   """
   srfNews = requests.get(u)
-  with open('srf.xml', 'wb') as f:  # except block
+  with open(file, 'wb') as f:  # except block
     f.write(srfNews.content)
 
-  tree = ET.parse('srf.xml')
+  tree = ET.parse(file)
   root = tree.getroot()
   return root
 
