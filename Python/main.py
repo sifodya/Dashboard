@@ -9,6 +9,8 @@ from encodings import utf_8
 import discord, locale, platform, requests, news, utility
 from datetime import datetime
 from lxml import html
+from bs4 import BeautifulSoup as bs
+#from requests_html import HTMLSession
 import xml.etree.ElementTree as ET
 
 """"
