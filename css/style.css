@@ -446,3 +446,92 @@ textarea {
 .Audiokinetic div.info{
   padding: 10px;
 }
+
+.GameIndustryNews p.Title{
+  font : 20px "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  background-color: darkgrey;
+  text-align: center;
+  width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.GameIndustryNews p.Header{
+  font : 15px "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  width: 90%;
+  padding: 10px;
+  justify-self: center;
+  border-bottom: black dotted 2px;
+}
+
+.GameIndustryNews .PCGamer div.Content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.GameIndustryNews a{
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.GameIndustryNews div.Image img{
+  height: 100%;
+  width: 100%;
+}
+.GameIndustryNews div.Image{
+  width: 100%;
+  height: 50%;
+}
+.GameIndustryNews div.Item{
+  width: 30%;
+  height: 100%;
+  border: black solid 1px;
+}
+.GameIndustryNews div.Title{
+  font-weight: bold;
+  grid-area: Title;
+  margin-bottom: 5px;
+  justify-self: left;
+  width: 100%;
+  height: 100%;
+}
+.GameIndustryNews div.Description{
+  grid-area: Description;
+  border: 2px solid blueviolet;
+  justify-self: left;
+  height: 100%;
+  width: 100%;
+}
+.GameIndustryNews div.Date{
+  grid-area: Date;
+  border: solid green 2px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font: small "Helvetica", Helvetica, Arial, sans-serif;
+}
+.GameIndustryNews div.Text{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "Title Title" "Description Date";
+  margin: 5px;
+  border: 2px solid orange;
+  height: 100%;
+  width: 100%;
+}
+
+.GameIndustryNews div.Content{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
