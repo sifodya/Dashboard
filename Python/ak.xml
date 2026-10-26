@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TMMTDBG');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="utf-8"/>
+        <link rel="icon" href="/jakhub/favicon.ico"/>
+        <meta name="theme-color" content="#000000"/>
+        <link rel="manifest" href="/jakhub/manifest.json"/>
+        <title>Audiokinetic</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="author" content="Audiokinetic Inc." />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="en" />
+        <meta name="title" content="Audiokinetic" data-react-helmet="true"/>
+        <meta name="description" content="Audiokinetic - The global leader in interactive audio technology." data-react-helmet="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="canonical" href="https://www.audiokinetic.com/en/community/blog/" />
+        <link rel="alternate" hreflang="en-us" href="https://www.audiokinetic.com/en/community/blog">
+        <link rel="alternate" hreflang="fr-ca" href="https://www.audiokinetic.com/fr/community/blog">
+        <link rel="alternate" hreflang="ja-jp" href="https://www.audiokinetic.com/ja/community/blog">
+        <link rel="alternate" hreflang="zh-cn" href="https://www.audiokinetic.com/zh/community/blog">
+        <link rel="alternate" hreflang="ko-kr" href="https://www.audiokinetic.com/ko/community/blog">
+        <link rel="alternate" hreflang="x-default" href="https://www.audiokinetic.com/en/community/blog" />
+
+        <link rel="alternate" type="application/rss+xml" title="Blog RSS (English)" href="https://www.audiokinetic.com/rss-feed/?lang=en_US" />
+        <link rel="alternate" type="application/rss+xml" title="Blog RSS (Français)" href="https://www.audiokinetic.com/rss-feed/?lang=fr_CA" />
+        <link rel="alternate" type="application/rss+xml" title="Blog RSS (日本語)" href="https://www.audiokinetic.com/rss-feed/?lang=ja_JP" />
+        <link rel="alternate" type="application/rss+xml" title="Blog RSS (简体中文)" href="https://www.audiokinetic.com/rss-feed/?lang=zh_CN" />
+        <link rel="alternate" type="application/rss+xml" title="Blog RSS (한국어)" href="https://www.audiokinetic.com/rss-feed/?lang=ko_KR" />
+
+        <style>
+            body {
+                font-family: sans-serif; /* Mitigate FOUC (Flash Of Unstyled Content) */
+            }
+        </style>
+                    <link href="/jakhub/assets/index-CftquJmJ.css" rel="stylesheet">
+                <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    </head>
+    <body>
+        <style>
+            .extra-nav { background-color:#00549f; height:2.51em; line-height:2.5em; text-align:center;display:flex; display:-webkit-flex; align-items:center; -webkit-align-items:center; justify-content:center; -webkit-justify-content:center; }
+            .extra-nav a { color:#FFF; margin:0 0.8em; }
+            .extra-nav a:hover { color:#004a8c !important; text-decoration:none; }
+            #root {
+                position: relative;
+            } 
+        </style>
+
+        <noscript>You need to enable JavaScript to run this website.</noscript>
+        <div id="root"></div>
+
+        
+
+                                    <script type="module" src="/jakhub/assets/index-js9cRGoY.js"></script>
+                                                <script>
+            window.JAKHUB_VERSION = '9.9.9v999';
+        </script>
+                                    <script>
+                        // Comes after, to override the one we got in the original index file:
+                        window.JAKHUB_VERSION = '2026.10.02.11699';
+                    </script>
+                                                                <script>
+            // Uncomment and review once dark mode is ready...
+            // const currentTheme =
+            //     localStorage.getItem('theme') ||
+            //     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            // if (currentTheme == null) {
+            //     localStorage.setItem('data-theme', 'light');
+            //     currentTheme = 'light';
+            // }
+            // document.documentElement.setAttribute('data-theme', currentTheme)
+
+            // ...and delete the following line
+            document.documentElement.setAttribute('data-theme', 'light')
+        </script>
+                                            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ5R14M6Z8"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-PJ5R14M6Z8');
+            </script>    </body>
+</html>
