@@ -39,3 +39,14 @@ def getSectionDay(d: datetime.date) -> list[int] | list[Any]:
   elif d.hour in evening:
     sectionOfDay = evening
   return sectionOfDay
+def xmlNS(ns, t):
+  """
+  :param ns: XML Namespace
+  :type ns: str
+  :param t: XML Tag to search for
+  :type t: str
+  :return: combined search string
+  :rtype: str
+  """
+  xmlTag = ns+t
+  return xmlTag
