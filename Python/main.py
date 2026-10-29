@@ -13,45 +13,16 @@ from bs4 import BeautifulSoup as bs
 #from requests_html import HTMLSession
 import xml.etree.ElementTree as ET
 
-""""
-if platform.system() == "Windows":
-  locale.setlocale(locale.LC_ALL, 'german')
-elif platform.system() == "Linux":
-  locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
-else:
-  locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
-
-"""
 utility.localise()
 now = datetime.now()
 sectionOfDay = utility.getSectionDay(now)
-"""
-morning = [0, 1, 2, 3, 4, 5, 6, 7, 8, 23]
-afternoon = [9, 10, 11, 12, 13, 14, 15, 16]
-evening = [17, 18, 19, 20, 21, 22]
-#sectionOfDay = []
-if now.hour in morning:
-  sectionOfDay = morning
-elif now.hour in afternoon:
-  sectionOfDay = afternoon
-elif now.hour in evening:
-  sectionOfDay = evening
-
-srfNews = requests.get('https://www.srf.ch/news/bnf/rss/19032223')
-with open('srf.xml', 'wb') as f: #except block
-  f.write(srfNews.content)
-
-tree = ET.parse('srf.xml')
-root = tree.getroot()
-"""
 
 #=====================================================================
 #SRF
-root = news.getNewsRSS('https://www.srf.ch/news/bnf/rss/19032223')
+root = news.getNewsRSS('https://www.srf.ch/news/bnf/rss/19032223', 'srf.xml')
 
-with open('P://Documents//Git Repo//Dashboard//index.html', "r+", encoding='utf_8') as m:
+with open('..//index.html', "r+", encoding='utf_8') as m:
   masterHTML = html.fromstring(m.read())
-
   childs = masterHTML[1][8].getchildren()
   for child in childs:
     if child.tag != 'p':
