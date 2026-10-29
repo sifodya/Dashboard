@@ -12,9 +12,9 @@ def localise():
   if platform.system() == "Windows":
     locale.setlocale(locale.LC_ALL, 'german')
   elif platform.system() == "Linux":
-    locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
+    locale.setlocale(locale.LC_ALL, 'de_CH.UTF-8')
   else:
-    locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
+    locale.setlocale(locale.LC_ALL, 'de_CH.UTF-8')
 
 def getSectionDay(d: datetime.date) -> list[int] | list[Any]:
   """
