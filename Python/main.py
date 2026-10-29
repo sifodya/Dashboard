@@ -61,47 +61,93 @@ for child in AkChilds:
   print(child.text)"""
 #=======================================================================
 #PCGamer
-
 pcGamerRoot = news.getNewsRSS('https://www.pcgamer.com/rss/', 'pcgamer.xml')
-for child in pcGamerRoot.iter('item'):
-  print(child.find('pubDate').text)
-  print(child.find('title').text.strip())
-  print(child.find('link').text)
-  print(child.find('enclosure').attrib['url'])
-  print(child.find('category').text)
-  print(child.find('description').text.strip())
 
+with open('..//index.html', "r+", encoding='utf_8') as m:
+  masterHTML = html.fromstring(m.read())
+  childs = masterHTML[1][10][1][1].getchildren()
+  for child in childs:
+    if child.tag != 'p' and child.attrib.get('class') != 'Content':
+      child.getparent().remove(child)
+  for child in pcGamerRoot.iter('item'):
+    date = child.find('pubDate').text
+    if int(date[5:7]) == int(now.day) and int(date[17:19]) in sectionOfDay:
+      print('PCGamer')
+      with open ('..//gameNewsTemplate.html', 'r', encoding='utf_8') as t:
+        #print(child.find('category').text) #TODO Add Category to HTML
+        htmlTemp = html.fromstring(t.read())
+        htmlTemp[0].set('href', child.find('link').text) #Article Link
+        htmlTemp[0][0][0].set('src', child.find('enclosure').attrib['url']) #Image Link
+        htmlTemp[0][1][0].text = child.find('title').text.strip() #Title
+        htmlTemp[0][1][1].text = child.find('description').text.strip() #Description
+        htmlTemp[0][1][2].text = child.find('pubDate').text[5:-6] #Date
+        masterHTML[1][10][1][1].append(htmlTemp)
+with open('..//index.html', "wb") as m:
+  m.write(html.tostring(masterHTML))
+#====================================================================================
 #Gameswirtschaft
 gwRoot = news.getNewsRSS('https://www.gameswirtschaft.de/feed/atom/', 'gw.xml')
 nns = str(gwRoot.tag)
 ns = nns[:-4]
-for child in gwRoot.iter(utility.xmlNS(ns, 'entry')):
-  print(child.find(utility.xmlNS(ns, 'title')).text)
-  print(child.find(utility.xmlNS(ns, 'link')).attrib['href'])
-  print(child.find(utility.xmlNS(ns, 'published')).text)
-  summ = child.find(utility.xmlNS(ns, 'summary')).text
-  s = summ.find('src')
-  e = summ.find('png')
-  if e == -1:
-    e = summ.find('jpg')
-  print(summ[s + 5:e + 3])
-  sS = summ.find('/>')
-  eS = summ.find('</p>')
-  print(summ[sS + 2:eS - 1])
+with open('..//index.html', "r+", encoding='utf_8') as m:
+  masterHTML = html.fromstring(m.read())
+  childs = masterHTML[1][10][2][1].getchildren()
+  for child in childs:
+    if child.tag != 'p' and child.attrib.get('class') != 'Content':
+      child.getparent().remove(child)
+  for child in gwRoot.iter(utility.xmlNS(ns, 'entry')):
+    date = child.find(utility.xmlNS(ns, 'published')).text
+    if int(date[8:10]) == int(now.day):# and int(date[11:13]) in sectionOfDay:
+      print('GamesWirtschaft')
+      with open('..//gameNewsTemplate.html', 'r', encoding='utf_8') as t:
+        htmlTemp = html.fromstring(t.read())
+        summ = child.find(utility.xmlNS(ns, 'summary')).text
+        s = summ.find('src')
+        e = summ.find('png')
+        if e == -1:
+          e = summ.find('jpg')
+        sS = summ.find('/>')
+        eS = summ.find('</p>')
+        htmlTemp[0].set('href', child.find(utility.xmlNS(ns, 'link')).attrib['href'])  # Article Link
+        htmlTemp[0][0][0].set('src', summ[s + 5:e + 3])  # Image Link
+        htmlTemp[0][1][0].text = child.find(utility.xmlNS(ns, 'title')).text  # Title
+        htmlTemp[0][1][1].text = summ[sS + 2:eS - 1]  # Description
+        htmlTemp[0][1][2].text = child.find(utility.xmlNS(ns, 'published')).text  # Date
+        #print(ET.tostring(htmlTemp).decode())
+        masterHTML[1][10][2][1].append(htmlTemp)
+with open('..//index.html', "wb") as m:
+  m.write(html.tostring(masterHTML))
+
 
 #Gameworldobserver
 gwoRoot  = news.getNewsRSS('https://gameworldobserver.com/feed/atom/', 'gwo.xml')
 nns = str(gwoRoot.tag)
 ns = nns[:-4]
-for child in gwoRoot.iter(utility.xmlNS(ns, 'entry')):
-  print(child.find(utility.xmlNS(ns, 'title')).text)
-  print(child.find(utility.xmlNS(ns, 'link')).attrib['href'])
-  print(child.find(utility.xmlNS(ns, 'published')).text)
-  print(child.find(utility.xmlNS(ns, 'summary')).text)
-  imageStr = child.find(utility.xmlNS(ns, 'content')).text
-  s = imageStr.find('src')
-  e = imageStr.find('png')
-  if e == -1:
-    e = imageStr.find('jpg')
-  print(imageStr[s + 5:e + 3])
-  print(child.find(utility.xmlNS(ns, 'category')).attrib['term'])
+with open('..//index.html', "r+", encoding='utf_8') as m:
+  masterHTML = html.fromstring(m.read())
+  childs = masterHTML[1][10][3][1].getchildren()
+  for child in childs:
+    if child.tag != 'p' and child.attrib.get('class') != 'Content':
+      child.getparent().remove(child)
+  for child in gwoRoot.iter(utility.xmlNS(ns, 'entry')):
+    date = child.find(utility.xmlNS(ns, 'published')).text
+    if int(date[8:10]) == int(now.day):  # and int(date[11:13]) in sectionOfDay:
+      print('GameWorldObserver')
+      with open('..//gameNewsTemplate.html', 'r', encoding='utf_8') as t:
+        htmlTemp = html.fromstring(t.read())
+        imageStr = child.find(utility.xmlNS(ns, 'content')).text
+        s = imageStr.find('src')
+        e = imageStr.find('png')
+        if e == -1:
+          e = imageStr.find('jpg')
+        #print(child.find(utility.xmlNS(ns, 'category')).attrib['term']) TODO: Add Category
+        htmlTemp[0].set('href', child.find(utility.xmlNS(ns, 'link')).attrib['href'])  # Article Link
+        htmlTemp[0][0][0].set('src', imageStr[s + 5:e + 3])  # Image Link
+        htmlTemp[0][1][0].text = child.find(utility.xmlNS(ns, 'title')).text  # Title
+        htmlTemp[0][1][1].text = child.find(utility.xmlNS(ns, 'summary')).text  # Description
+        htmlTemp[0][1][2].text = child.find(utility.xmlNS(ns, 'published')).text  # Date
+        #print(ET.tostring(htmlTemp).decode())
+        masterHTML[1][10][3][1].append(htmlTemp)
+with open('..//index.html', "wb") as m:
+  m.write(html.tostring(masterHTML))
+
